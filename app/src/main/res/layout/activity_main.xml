@@ -21,17 +21,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Siuu"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="31dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="28dp" />
 
     <Button
         android:id="@+id/buttonInscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Inscription"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="31dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
