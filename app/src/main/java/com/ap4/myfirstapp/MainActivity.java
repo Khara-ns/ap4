@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.siuu);
         Button btn = (Button) findViewById(R.id.btn);
-        Button btnLogin = (Button) findViewById(R.id.buttonInscription);
-        Button btnInscr = (Button) findViewById(R.id.buttonLogin);
+        Button btnLogin = (Button) findViewById(R.id.buttonLogin);
+        Button btnInscr = (Button) findViewById(R.id.buttonInscription);
         this.titre = (TextView) findViewById(R.id.titre);
 
         btn.setOnClickListener(view -> {
