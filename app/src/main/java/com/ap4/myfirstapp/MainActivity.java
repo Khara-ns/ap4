@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.siuu);
         Button btn = (Button) findViewById(R.id.btn);
-        Button btnInscr = (Button) findViewById(R.id.buttonInscription);
+        Button btnLogin = (Button) findViewById(R.id.buttonInscription);
+        Button btnInscr = (Button) findViewById(R.id.buttonLogin);
         this.titre = (TextView) findViewById(R.id.titre);
 
         btn.setOnClickListener(view -> {
@@ -36,7 +37,11 @@ public class MainActivity extends AppCompatActivity {
         btnInscr.setOnClickListener(view -> {
             Intent intent = new Intent( MainActivity.this, Inscription.class );
             startActivity(intent);
+        });
 
-    });
+        btnLogin.setOnClickListener(view -> {
+            Intent intent = new Intent( MainActivity.this, Login.class );
+            startActivity(intent);
+        });
     }
 }
