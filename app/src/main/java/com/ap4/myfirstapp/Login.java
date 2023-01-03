@@ -19,6 +19,7 @@ import android.view.View;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText user;
+    Button resultat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         user = (EditText) findViewById (R.id.user);
         //password = (EditText) findViewById (R.id.password);
-
+        Button resultat = (Button) findViewById(R.id.connection);
+        resultat.setOnClickListener(this);
     }
         @Override
         public void onClick(View v) {
