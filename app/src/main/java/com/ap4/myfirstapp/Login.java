@@ -12,6 +12,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.app.Activity;
 import android.content.Intent;
@@ -39,6 +40,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             // TODO Auto-generated method stub
+            final ProgressBar progressBar = (ProgressBar) this.findViewById(R.id.progressBar);
+            progressBar.setIndeterminate(true);
+
             String chaine = user.getText().toString();
             String chaine2 = password.getText().toString();
             Log.v("Essai",chaine);
