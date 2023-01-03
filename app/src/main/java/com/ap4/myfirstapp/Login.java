@@ -41,7 +41,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         public void onClick(View v) {
             // TODO Auto-generated method stub
             final ProgressBar progressBar = (ProgressBar) this.findViewById(R.id.progressBar);
-            progressBar.setIndeterminate(true);
             progressBar.setVisibility(View.VISIBLE);
 
             String chaine = user.getText().toString();
