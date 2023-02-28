@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnInscr.setOnClickListener(view -> {
-            Intent intent = new Intent( MainActivity.this, Inscription.class );
+            Intent intent = new Intent( MainActivity.this, QrCode.class );
             startActivity(intent);
         });
 
