@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         this.titre = (TextView) findViewById(R.id.titre);
 
         btn.setOnClickListener(view -> {
-            titre.setText("Mais voilà mais c'était sur enfait !");
-            mediaPlayer.start();
+            Intent intent = new Intent( MainActivity.this, Localisation.class );
+            startActivity(intent);
         });
 
         btnInscr.setOnClickListener(view -> {
