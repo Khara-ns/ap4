@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -94,11 +95,17 @@ public class QrCode extends AppCompatActivity {
                     }
 
                     assert responseBody != null;
+                    System.out.println("super " + responseBody);
                     String responseBodyS = responseBody.string();
                     System.out.println("TEST REPONSE" + responseBodyS);
 
                     try {
-                        JSONObject jsonO = new JSONObject(responseBodyS);
+                        JSONArray jsonPITIE = new JSONArray(responseBodyS);
+
+                      //  JSONArray jsonNom = jsonO.getJSONArray("");
+                        String name = jsonPITIE.getString(0);
+                        System.out.println("ALLELUIA + "+name);
+                        JSONObject jsonO = new JSONObject(name);
                         String nom = (String) jsonO.get("produit_nom");
                         String ref = (String) jsonO.get("produit_ref");
                         int prix = (int) jsonO.get("produit_coutHT");
