@@ -31,9 +31,9 @@ public class Localisation extends AppCompatActivity
 
     LocationManager locationManager = null;
     private String fournisseur;
-    private TextView latitude;
-    private TextView longitude;
-    private TextView Adresse;
+    private String latitude;
+    private String longitude;
+    private String Adresse;
 
     Geocoder geocoder = new Geocoder(this, Locale.getDefault());
 
@@ -56,8 +56,7 @@ public class Localisation extends AppCompatActivity
 
             String strLatitude = String.format("Latitude : %f", localisation.getLatitude());
             String strLongitude = String.format("Longitude : %f", localisation.getLongitude());
-            latitude.setText(strLatitude);
-            longitude.setText(strLongitude);
+
 
             List<Address> adresses = null;
             try
@@ -87,8 +86,8 @@ public class Localisation extends AppCompatActivity
                     addressFragments.add(adresse.getAddressLine(i));
                 }
                 Log.d("GPS", TextUtils.join(System.getProperty("line.separator"), addressFragments));
-                Adresse.setText(TextUtils.join(System.getProperty("line.separator"), addressFragments));
             }
+
         }
 
         @Override
@@ -127,9 +126,6 @@ public class Localisation extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
-        System.out.println(longitude);
-        System.out.println(latitude);
 
         Log.d("GPS", "onCreate");
 

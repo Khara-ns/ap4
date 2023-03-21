@@ -58,12 +58,13 @@ public class QrCode extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
+                    grabProduit(result.getContents());
                 }
             }).show();
         }
     });
     private void grabProduit(String uuid) {
-        String url = "https://site.btsap3.tk/SiteFichier/ap3/api/apiProduitSingle.php";
+        String url = "https://site.btsap3.tk/SiteFichier/ap3/api/apiProduitUnique.php";
 
         final OkHttpClient client = new OkHttpClient();
         RequestBody requestBody = new FormBody.Builder()
@@ -92,19 +93,26 @@ public class QrCode extends AppCompatActivity {
                         System.out.println(responseHeaders.name(i) + ": " + responseHeaders.value(i));
                     }
 
+                    assert responseBody != null;
                     String responseBodyS = responseBody.string();
-                    System.out.println("TEST REPONCE" + responseBodyS);
+                    System.out.println("TEST REPONSE" + responseBodyS);
 
                     try {
                         JSONObject jsonO = new JSONObject(responseBodyS);
-                        ProduitUniqueObjet MonProduitUnique = new ProduitUniqueObjet("","",2,"","","","");
-                        boolean success = (boolean) jsonO.get("success");
-                        System.out.println("TEST BOOLEAN" + success);
+                        String nom = (String) jsonO.get("produit_nom");
+                        String ref = (String) jsonO.get("produit_ref");
+                        int prix = (int) jsonO.get("produit_coutHT");
+                        String description = (String) jsonO.get("produit_description");
+                        String rayon = (String) jsonO.get("rayon_libelle");
+                        String lieuStockage = (String) jsonO.get("entrepot_adresse");
+                        ProduitUniqueObjet MonProduitUnique = new ProduitUniqueObjet(nom,ref,prix,description,rayon,lieuStockage);
 
-                        if (success == true) {
-                            Intent intent = new Intent(QrCode.this, Page_magasin.class);
-                            startActivity(intent);
-                        }
+                        System.out.println("TEST : " + MonProduitUnique);
+
+                       // if (success == true) {
+                        //    Intent intent = new Intent(QrCode.this, Page_magasin.class);
+                        //    startActivity(intent);
+                       // }
 
                     } catch (JSONException e) {
                         e.printStackTrace();
