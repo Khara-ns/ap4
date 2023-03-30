@@ -2,8 +2,8 @@ package com.ap4.myfirstapp;
 
 public class ProduitObjet {
 
-    static String produitNom;
-    static String produitPhoto;
+    private String produitNom;
+    private String produitPhoto;
 
     public ProduitObjet(String nomProduit, String photoProduit) {
         produitNom = nomProduit;
